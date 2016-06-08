@@ -8,7 +8,7 @@ module Slytherin
     end
 
     def board
-      board = Slytherin::Board.new
+      board = Slytherin::Board.new json["board"]
       board
     end
   end
