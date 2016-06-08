@@ -59,6 +59,10 @@ class TestMoveDeserializer < Minitest::Test
     deserializer.board
   end
 
+  def snakes
+    deserializer.snakes
+  end
+
   def test_deserializer_board_returns_a_board
     assert_equal board.class, Slytherin::Board
   end
@@ -69,5 +73,13 @@ class TestMoveDeserializer < Minitest::Test
 
   def test_board_width
     assert_equal board.width, 3
+  end
+
+  def test_snake_count
+    assert_equal snakes.count, 1
+  end
+
+  def test_first_snake_length
+    assert_equal snakes.first.length, 1
   end
 end

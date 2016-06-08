@@ -1,6 +1,5 @@
 module Slytherin
   class Board
-
     def initialize spaces
       @spaces = spaces
     end
