@@ -18,7 +18,9 @@ post '/start' do
 
     # Dummy response
     responseObject = {
-        "taunt" => "battlesnake-ruby",
+      name: 'seekaybot',
+      taunt: "battlesnake-ruby",
+      color: '#ff0000'
     }
 
     return responseObject.to_json
