@@ -1,7 +1,10 @@
 module Slytherin
   class Board
-    def initialize spaces
+    attr_reader :snakes
+
+    def initialize spaces, snakes
       @spaces = spaces
+      @snakes = snakes
     end
 
     def height
@@ -9,7 +12,15 @@ module Slytherin
     end
 
     def width
-      @spaces.first.length
+      (@spaces.first || []).length
+    end
+
+    def my_snake
+      snakes.detect { |y| y.name == "slytherin" }
+    end
+
+    def recommend(snake)
+      snake.direction
     end
   end
 end

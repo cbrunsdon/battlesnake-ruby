@@ -15,8 +15,7 @@ module Slytherin
     end
 
     def board
-      board = Slytherin::Board.new json["board"]
-      board
+      Slytherin::Board.new json["board"], snakes
     end
   end
 end
