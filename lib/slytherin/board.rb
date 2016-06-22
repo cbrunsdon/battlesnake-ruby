@@ -1,18 +1,13 @@
 module Slytherin
   class Board
-    attr_reader :snakes
+    attr_reader :snakes, :food
+    attr_reader :height, :width
 
-    def initialize spaces, snakes
-      @spaces = spaces
+    def initialize width, height, snakes, food
+      @width = width
+      @height = height
       @snakes = snakes
-    end
-
-    def height
-      @spaces.length
-    end
-
-    def width
-      (@spaces.first || []).length
+      @food = []
     end
 
     def my_snake

@@ -14,8 +14,12 @@ module Slytherin
       end
     end
 
+    def food
+      @json["food"]
+    end
+
     def board
-      Slytherin::Board.new json["board"], snakes
+      Slytherin::Board.new json["board"].length, json["board"].first.length, snakes, food
     end
   end
 end
