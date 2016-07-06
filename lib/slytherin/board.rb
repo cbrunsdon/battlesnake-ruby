@@ -15,7 +15,7 @@ module Slytherin
     end
 
     def recommend(snake)
-      snake.direction
+      "up"
     end
   end
 end
