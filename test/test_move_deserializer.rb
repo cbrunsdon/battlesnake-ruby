@@ -82,4 +82,16 @@ class TestMoveDeserializer < Minitest::Test
   def test_first_snake_length
     assert_equal snakes.first.length, 1
   end
+
+  def test_food_length
+    assert_equal board.food.length, 1
+  end
+
+  def test_snake_length
+    assert_equal snakes.first.coords.length, 3
+  end
+
+  def test_snake_head
+    assert_equal snakes.first.head, [2,0]
+  end
 end

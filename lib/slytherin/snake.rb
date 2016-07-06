@@ -1,19 +1,19 @@
 module Slytherin
   class Snake
-    def initialize snake_json
-      @json = snake_json
+    attr_reader :name, :coords
+
+    def initialize name, coords
+      @name = name
+      @coords = coords
     end
 
     def length
       coords.uniq.length
     end
 
-    def direction
+    def head
+      coords.first
     end
 
-    private
-    def coords
-      @json["coords"]
-    end
   end
 end

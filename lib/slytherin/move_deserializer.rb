@@ -10,7 +10,7 @@ module Slytherin
 
     def snakes
       @json["snakes"].map do |snake|
-        Slytherin::Snake.new snake
+        Slytherin::Snake.new snake['name'], snake['coords']
       end
     end
 
