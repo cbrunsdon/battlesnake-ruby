@@ -7,7 +7,7 @@ require 'slytherin/board_printer'
 get '/' do
     responseObject = {
         "color"=> "#fff000",
-        "head_url"=> "url/to/your/img/file"
+        "head_url"=> "/static/head.png"
     }
 
     return responseObject.to_json
@@ -23,6 +23,7 @@ post '/start' do
     responseObject = {
       name: 'slytherin',
       taunt: "battlesnake-ruby",
+      head_url: '/static/head.png',
       color: '#ff0000'
     }
 
@@ -33,18 +34,11 @@ post '/move' do
     requestBody = request.body.read
     requestJson = requestBody ? JSON.parse(requestBody) : {}
 
-    # Calculate a move with the request data
-    puts requestJson.inspect
-
     deserializer = Slytherin::MoveDeserializer.new requestJson
     board = deserializer.board
 
     puts Slytherin::BoardPrinter.new.print(board)
 
-    #board.my_snake
-    #board.recommend(my_snake)
-
-    # Dummy response
     responseObject = {
         "move" => "up",
         "taunt" => "going north!",
