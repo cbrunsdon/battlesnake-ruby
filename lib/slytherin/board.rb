@@ -7,7 +7,7 @@ module Slytherin
       @width = width
       @height = height
       @snakes = snakes
-      @food = []
+      @food = food
     end
 
     def my_snake
