@@ -42,4 +42,16 @@ class TestBoardPrinter < Minitest::Test
     assert_equal Slytherin::BoardPrinter.new.print(three_by_three_board([snake], [])), board
   end
 
+  def test_print_snake_with_body
+    board =
+      "-----\n" +
+      "|   |\n" +
+      "|oh |\n" +
+      "|oo |\n" +
+      "-----"
+
+    snake = Slytherin::Snake.new('snakey', [[1,1], [0,1], [0, 2], [1, 2]])
+    assert_equal Slytherin::BoardPrinter.new.print(three_by_three_board([snake], [])), board
+  end
+
 end

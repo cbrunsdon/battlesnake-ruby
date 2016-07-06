@@ -18,6 +18,7 @@ module Slytherin
     def space(board, width, height)
       return 'f' if board.food.select { |food| food == [width, height] }.any?
       return 'h' if board.snakes.select { |snake| snake.head == [width, height] }.any?
+      return 'o' if board.snakes.select { |snake| snake.body.include? [width, height] }.any?
       ' '
     end
   end
