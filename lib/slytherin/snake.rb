@@ -15,5 +15,9 @@ module Slytherin
       coords.first
     end
 
+    def body
+      coords - [head]
+    end
+
   end
 end
